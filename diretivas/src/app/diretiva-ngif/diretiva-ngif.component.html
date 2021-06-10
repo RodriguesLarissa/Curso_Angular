@@ -1,0 +1,38 @@
+<h5>*ngIf</h5>
+
+<div *ngIf="cursosLinguas.length > 0" >
+    Lista de cursos de línguas:
+    {{ cursosLinguas }}
+</div>
+
+<div *ngIf="cursosLinguas.length == 0" >
+    Lista de cursos de línguas:
+    Não existem cursos para serem listados.
+</div>
+
+<div *ngIf="cursosProg" >
+    Lista de cursos de programação:
+    HTML, JavaScript, CSS.
+</div>
+
+<div *ngIf="!cursosProg" >
+    Lista de cursos de programação:
+    Não existem cursos para serem listados.
+</div>
+
+<br>
+
+<button (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
+
+<br><br>
+
+<h5>Hidden</h5>
+<div  [hidden]="!cursosProg" >
+    Lista de cursos de culinária:
+    Comida brasileira, Sobremesas
+</div>
+
+<div [hidden]="cursosProg" >
+    Lista de cursos de culinária:
+    Não existem cursos para serem listados.
+</div>
