@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-diretivas-customizadas',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiretivasCustomizadasComponent implements OnInit {
 
+  cursosProg: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  onMostrarCursos(){
+    this.cursosProg = !this.cursosProg;
+  }
+
 
 }

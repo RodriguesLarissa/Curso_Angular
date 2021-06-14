@@ -7,3 +7,29 @@
 <p highlightMouse>
     Texto com highlight quando passo o mouse.
 </p>
+<br>
+
+<h5>Cores customizadas</h5>
+
+<p [highlight]="'red'" [defaultColor]="'grey'">
+    Highlight com cores customizadas.
+</p>
+
+<h5>ng-Else</h5>
+
+<div *ngIf="cursosProg" >
+    Lista de cursos de programação:
+    HTML, JavaScript, CSS.
+</div>
+
+<div *ngElse="cursosProg" >
+    Lista de cursos de programação:
+    Não existem cursos para serem listados.
+</div>
+
+<br>
+
+<button (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
+
+<br>
+
