@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DiretivasCustomizadasComponent implements OnInit {
 
+  color: string = '';
+
   cursosProg: boolean = false;
 
   constructor() { }
@@ -18,5 +20,11 @@ export class DiretivasCustomizadasComponent implements OnInit {
     this.cursosProg = !this.cursosProg;
   }
 
+  selectColor(color: string){
+    this.color = color;
+  }
 
+  pickColor(){
+    return this.color;
+  }
 }

@@ -6,6 +6,8 @@ import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 })
 export class HighlightDirective {
 
+  color: string = '';
+
   @HostListener('mouseenter') onMouseOver(){
     this.backgroundColor = this.highlightColor;
   }

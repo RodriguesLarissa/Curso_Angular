@@ -11,7 +11,9 @@
 
 <h5>Cores customizadas</h5>
 
-<p [highlight]="'red'" [defaultColor]="'grey'">
+<input type="color" class="form-control form-control-color" #color>
+
+<p [highlight]="'selectColor(color.value)'" [defaultColor]="'grey'">
     Highlight com cores customizadas.
 </p>
 
