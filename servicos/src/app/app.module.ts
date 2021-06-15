@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
 import { CursosService } from './cursos/cursos.service';
 import { CursoModule } from './cursos/cursos.module';
+import { LogService } from './servicos/log.service';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,10 @@ import { CursoModule } from './cursos/cursos.module';
     CriarCursoModule,
     CursoModule
   ],
-  // providers: [
-  //   CursosService
-  // ],
+   providers: [
+     LogService
+  // CursosService
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
