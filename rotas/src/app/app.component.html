@@ -4,12 +4,15 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="">Home</a></li>
       <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
-      <li routerLinkActive="active"><a routerLink="/cursos">Cursos</a></li>
+      <li routerLinkActive="active"><a routerLink="/cardapios">Cardápio</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['cardapio', idAlimento.value]">Cardápio Detalhes</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
+  <p>Entre com o ID do alimento:</p>
+  <input type="text" #idAlimento>
   <router-outlet></router-outlet>
 </div>
 

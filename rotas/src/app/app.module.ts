@@ -6,7 +6,8 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { CursosComponent } from './cursos/cursos.component';
+import { CardapioComponent } from './cardapio/cardapio.component';
+import { CardapioDetalhesComponent } from './cardapio-detalhes/cardapio-detalhes.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CursosComponent } from './cursos/cursos.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    CursosComponent
+    CardapioComponent,
+    CardapioDetalhesComponent
   ],
   imports: [
     BrowserModule,
