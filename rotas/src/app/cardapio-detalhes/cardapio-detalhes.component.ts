@@ -1,5 +1,6 @@
+import { CardapioService } from './../cardapio/cardapio.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -9,10 +10,14 @@ import { Subscription } from 'rxjs';
 })
 export class CardapioDetalhesComponent implements OnInit {
 
-  id: string = '';
+  id: number = 0;
   inscricao: Subscription = new Subscription;
+  comida: any;
 
-  constructor(private route: ActivatedRoute) { 
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private cardapioServices: CardapioService) { 
     //this.id = this.route.snapshot.params['id'];
     //console.log(this.route);
   }
@@ -21,6 +26,11 @@ export class CardapioDetalhesComponent implements OnInit {
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
         this.id = params['id'];
+        this.comida = this.cardapioServices.getComida(this.id);
+
+        if(this.comida == null){
+          this.router.navigate(['/naoEncontrado']);
+        }
       }
     );
   }
