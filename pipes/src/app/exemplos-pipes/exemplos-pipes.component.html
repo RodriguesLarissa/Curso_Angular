@@ -2,7 +2,7 @@
 
 <p>Título: {{ filme.titulo | uppercase | camelCase }}</p>
 <p>Avaliação: {{ filme.rating | number:'1.1-2' }} </p>
-<p>Duração do filme: {{ filme.tempo | number }}</p>
+<p>Duração do filme: {{ filme.tempo | number }} horas</p>
 <p>Data de lançamento: {{ filme.dataLancamento | date }}</p>
 <p>Sinopse: {{ filme.sinopse }}</p>
 <p>Preço do Livro: {{ filme.precoLivro | currency:'BRL' }} </p>
@@ -18,8 +18,26 @@
 <input type="text" #novoValor>
 <button (click)="addFilme(novoValor.value)">Add Filme</button>
 
+<h5>Pipe Puro</h5>
+
 <ul>
     <li *ngFor="let fil of filmes | filtroArray: filtro" >
+        {{ fil }}
+    </li>
+</ul>
+
+<h5>Pipe Impuro</h5>
+
+<ul>
+    <li *ngFor="let fil of filmes | filtroArrayImpuro: filtro" >
+        {{ fil }}
+    </li>
+</ul>
+
+<h5>Maneira Correta</h5>
+
+<ul>
+    <li *ngFor="let fil of obterFilmes()" >
         {{ fil }}
     </li>
 </ul>
