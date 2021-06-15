@@ -8,3 +8,18 @@
 <p>Preço do Livro: {{ filme.precoLivro | currency:'BRL' }} </p>
 <br>
 <p>Filme: {{ filme | json }}</p>
+<br><br>
+
+<h3>Outros filmes:</h3>
+
+<input type="text" [(ngModel)]="filtro">
+<br>
+
+<input type="text" #novoValor>
+<button (click)="addFilme(novoValor.value)">Add Filme</button>
+
+<ul>
+    <li *ngFor="let fil of filmes | filtroArray: filtro" >
+        {{ fil }}
+    </li>
+</ul>

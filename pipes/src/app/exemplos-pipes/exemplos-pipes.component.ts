@@ -16,6 +16,14 @@ export class ExemplosPipesComponent implements OnInit {
     precoLivro: 30.00
   };
 
+  filmes: string[] = ['Deadpool', 'Cruella'];
+  
+  filtro!: string;
+
+  addFilme(valor: string){
+    this.filmes.push(valor);
+  }
+
   constructor() { }
 
   ngOnInit(): void {
