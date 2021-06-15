@@ -1,0 +1,10 @@
+<h3>Lista de Filmes</h3>
+
+<p>Título: {{ filme.titulo | uppercase }}</p>
+<p>Avaliação: {{ filme.rating | number:'1.1-2' }} </p>
+<p>Duração do filme: {{ filme.tempo | number }}</p>
+<p>Data de lançamento: {{ filme.dataLancamento | date:'dd-MM-yyyy' }}</p>
+<p>Sinopse: {{ filme.sinopse }}</p>
+<p>Preço do Livro: {{ filme.precoLivro | currency:'BRL' }} </p>
+<br>
+<p>Filme: {{ filme | json }}</p>
