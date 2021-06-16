@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';
+import { CardapioRoutingModule } from './cardapio.routing.module';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
@@ -12,7 +12,7 @@ import { CardapioComponent } from "./cardapio.component";
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule
+        CardapioRoutingModule
     ],
     exports: [],
     declarations: [
