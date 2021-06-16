@@ -1,4 +1,4 @@
-import { routing } from './app.routing';
+import { AppRoutingModule } from './app.routing.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterializeModule } from 'angular2-materialize';
@@ -23,7 +23,7 @@ import { CardapioNaoEncontradoComponent } from './cardapio-nao-encontrado/cardap
   imports: [
     BrowserModule,
     MaterializeModule,
-    routing
+    AppRoutingModule
   ],
   providers: [CardapioService],
   bootstrap: [AppComponent]
