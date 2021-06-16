@@ -1,3 +1,4 @@
+import { AlimentoService } from './alimento.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlimentosComponent implements OnInit {
 
-  constructor() { }
+  public alimentos: any[] = [];
+
+  constructor(private alimentoService: AlimentoService) { }
 
   ngOnInit(): void {
+    this.alimentos = this.alimentoService.getAlimentos();
   }
 
 }

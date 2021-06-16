@@ -1,3 +1,16 @@
-<p>alimentos works!</p>
+<div class="row">
+    <div class="col s6">
+        <h3>Lista de Alimentos</h3>
+        <div class="collection">
+            <a class="collection-item"
+            *ngFor="let alimento of alimentos"
+            [routerLink]="[alimento.id]">
+            {{ alimento.nome }}
+            </a>
+        </div>
+    </div>
 
-<router-outlet></router-outlet>
+    <div class="col s6">
+        <router-outlet></router-outlet>
+    </div>
+</div>

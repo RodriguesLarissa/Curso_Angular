@@ -5,15 +5,15 @@
       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="">Home</a></li>
       <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
       <li routerLinkActive="active"><a routerLink="/cardapios" [queryParams]="{pagina:1}">Cardápio</a></li>
-      <li routerLinkActive="active" ><a [routerLink]="['cardapio', idAlimento.value]">Cardápio Detalhes</a></li>
+      <!-- <li routerLinkActive="active" ><a [routerLink]="['cardapio', idAlimento.value]">Cardápio Detalhes</a></li> -->
       <li routerLinkActive="active"><a routerLink="/alimentos">Alimentos</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
-  <p>Entre com o ID do alimento:</p>
-  <input type="number" #idAlimento>
+  <!-- <p>Entre com o ID do alimento:</p>
+  <input type="number" #idAlimento> -->
   <router-outlet></router-outlet>
 </div>
 
