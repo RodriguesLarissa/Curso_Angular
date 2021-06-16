@@ -1,5 +1,6 @@
 <h3>Cardápio</h3>
 
+<p>Página: {{ pagina }}</p>
 <div class="collection">
     <a class="collection-item"
     *ngFor="let comida of cardapio"
@@ -7,3 +8,5 @@
     {{ comida.nome }} 
     </a>
 </div>
+
+<button (click)="proximaPagina()"> Próxima Página </button>
