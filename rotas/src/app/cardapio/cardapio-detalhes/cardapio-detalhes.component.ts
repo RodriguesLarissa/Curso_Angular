@@ -1,4 +1,4 @@
-import { CardapioService } from './../cardapio/cardapio.service';
+import { CardapioService } from '../cardapio.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
