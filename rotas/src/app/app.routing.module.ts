@@ -1,3 +1,4 @@
+import { PaginaNaoEncotradaComponent } from './pagina-nao-encotrada/pagina-nao-encotrada.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
@@ -23,9 +24,14 @@ const appRoutes: Routes = [
     { path: 'login', 
         component: LoginComponent 
     },
-    { path: '', 
+    { path: 'home', 
         component: HomeComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        canLoad: [AuthGuard]
+    },
+    { path: '', redirectTo: 'home', pathMatch: 'full'},
+    { path: '**',
+        component: PaginaNaoEncotradaComponent
     }
 
 ];

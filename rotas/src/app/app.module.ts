@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app.routing.module';
 import { AuthGuard } from './guards/auth.guard';
 import { CardapioGuard } from './guards/cardapio.guard';
 import { AlimentosGuard } from './guards/alimentos.guard';
+import { PaginaNaoEncotradaComponent } from './pagina-nao-encotrada/pagina-nao-encotrada.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    PaginaNaoEncotradaComponent
   ],
   imports: [
     BrowserModule,
