@@ -4,17 +4,20 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
-
+import { CardapioGuard } from './guards/cardapio.guard';
+import { AlimentosGuard } from './guards/alimentos.guard';
 
 const appRoutes: Routes = [
 
     { path: 'cardapio', 
         loadChildren: () => import('./cardapio/cardapio.module').then(m => m.CardapioModule),
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        canActivateChild: [CardapioGuard]
     },
     { path: 'alimentos', 
         loadChildren: () => import('./alimentos/alimentos.module').then(m => m.AlimentosModule),
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        //canActivateChild: [AlimentosGuard]
     },
     { path: 'login', 
         component: LoginComponent 
@@ -40,3 +43,4 @@ const appRoutes: Routes = [
 export class AppRoutingModule {
 
 }
+

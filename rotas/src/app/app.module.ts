@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { AppRoutingModule } from './app.routing.module';
 import { AuthGuard } from './guards/auth.guard';
+import { CardapioGuard } from './guards/cardapio.guard';
+import { AlimentosGuard } from './guards/alimentos.guard';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,12 @@ import { AuthGuard } from './guards/auth.guard';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthService, 
+    AuthGuard,
+    CardapioGuard,
+    AlimentosGuard
+  ],
   bootstrap: [AppComponent]
 })
 
