@@ -5,18 +5,19 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CardapioGuard } from './guards/cardapio.guard';
-import { AlimentosGuard } from './guards/alimentos.guard';
 
 const appRoutes: Routes = [
 
     { path: 'cardapio', 
         loadChildren: () => import('./cardapio/cardapio.module').then(m => m.CardapioModule),
         canActivate: [AuthGuard],
-        canActivateChild: [CardapioGuard]
+        canActivateChild: [CardapioGuard],
+        canLoad: [AuthGuard]
     },
     { path: 'alimentos', 
         loadChildren: () => import('./alimentos/alimentos.module').then(m => m.AlimentosModule),
         canActivate: [AuthGuard],
+        canLoad: [AuthGuard]
         //canActivateChild: [AlimentosGuard]
     },
     { path: 'login', 
@@ -24,7 +25,7 @@ const appRoutes: Routes = [
     },
     { path: '', 
         component: HomeComponent,
-        canActivate: [AuthGuard] 
+        canActivate: [AuthGuard]
     }
 
 ];
