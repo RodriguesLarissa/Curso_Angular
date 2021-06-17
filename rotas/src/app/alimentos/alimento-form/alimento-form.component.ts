@@ -2,13 +2,14 @@ import { AlimentoService } from './../alimento.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { IFormCanDeactivate } from 'src/app/guards/iform-candeactivate';
 
 @Component({
   selector: 'app-alimento-form',
   templateUrl: './alimento-form.component.html',
   styleUrls: ['./alimento-form.component.css']
 })
-export class AlimentoFormComponent implements OnInit {
+export class AlimentoFormComponent implements OnInit, IFormCanDeactivate {
 
   alimento: any;
   inscricao: Subscription = new Subscription;
@@ -48,5 +49,8 @@ export class AlimentoFormComponent implements OnInit {
     }
     return true;
   }
-
+  
+  podeDesativar(){
+    return this.podeMudarRota;
+  }
 }
