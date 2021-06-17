@@ -13,10 +13,10 @@ export class AlimentosGuard implements CanActivateChild{
     ): Observable<boolean>|Promise<boolean>|boolean {
         console.log('Guarda de rota filha');
 
-        if(state.url.includes('editar')){
-            alert('Usuário sem acesso!');
-            return of(false);
-        }
+        // if(state.url.includes('editar')){
+        //     alert('Usuário sem acesso!');
+        //     return of(false);
+        // }
 
         return true;
     }
