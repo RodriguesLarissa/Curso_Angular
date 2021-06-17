@@ -6,13 +6,16 @@ import { AlimentoDetalheComponent } from './alimento-detalhe/alimento-detalhe.co
 import { AlimentoFormComponent } from './alimento-form/alimento-form.component';
 import { AlimentosGuard } from '../guards/alimentos.guard';
 import { AlimentosDeactivateGuard } from '../guards/alimentos-deactivate.guard';
+import { AlimentoDetalheResolver } from './guards/alimento-detalhe.resolver';
 
 const alimentosRoutes = [
     {path: '', component: AlimentosComponent, 
     canActivateChild: [AlimentosGuard],
     children: [
         {path: 'novo', component: AlimentoFormComponent},
-        {path: ':id', component: AlimentoDetalheComponent},
+        {path: ':id', component: AlimentoDetalheComponent,
+            resolve: { alimento: AlimentoDetalheResolver }
+        },
         {path: ':id/editar', component: AlimentoFormComponent,
             canDeactivate: [AlimentosDeactivateGuard]}, 
     ]},

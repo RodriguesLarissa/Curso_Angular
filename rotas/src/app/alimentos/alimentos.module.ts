@@ -8,6 +8,7 @@ import { AlimentoDetalheComponent } from './alimento-detalhe/alimento-detalhe.co
 import { AlimentosRoutingModule } from "./alimentos.routing.module";
 import { FormsModule } from '@angular/forms';
 import { AlimentosDeactivateGuard } from '../guards/alimentos-deactivate.guard';
+import { AlimentoDetalheResolver } from './guards/alimento-detalhe.resolver';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { AlimentosDeactivateGuard } from '../guards/alimentos-deactivate.guard';
     ],
     providers: [
         AlimentoService,
-        AlimentosDeactivateGuard
+        AlimentosDeactivateGuard,
+        AlimentoDetalheResolver
     ]
 })
 

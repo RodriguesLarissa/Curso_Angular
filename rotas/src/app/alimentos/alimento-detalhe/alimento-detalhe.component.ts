@@ -2,6 +2,7 @@ import { AlimentoService } from './../alimento.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Alimento } from '../alimento';
 
 @Component({
   selector: 'app-alimento-detalhe',
@@ -10,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class AlimentoDetalheComponent implements OnInit {
 
-  alimento: any;
+  alimento!: Alimento;
   inscricao: Subscription = new Subscription;
 
   constructor(
@@ -20,13 +21,24 @@ export class AlimentoDetalheComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.inscricao = this.route.params.subscribe(
-      (params: any) => {
-        let id = params['id'];
+    // this.inscricao = this.route.params.subscribe(
+    //   (params: any) => {
+    //     let id = params['id'];
 
-        this.alimento = this.alimentoService.getAlimento(id);
+    //     this.alimento = this.alimentoService.getAlimento(id);
+    //   }
+    // );
+
+    console.log('ngOnInit: AlimentoDetalheComponent');
+
+    this.inscricao = this.route.data.subscribe(
+      (info) => {
+        console.log(info);
+        this.alimento = info.alimento;
       }
     );
+
+
   }
 
   editarContato(){
