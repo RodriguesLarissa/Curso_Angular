@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
 
+    { path: 'cardapio', loadChildren: () => import('./cardapio/cardapio.module').then(m => m.CardapioModule) },
+    { path: 'alimentos', loadChildren: () => import('./alimentos/alimentos.module').then(m => m.AlimentosModule) },
     { path: 'login', component: LoginComponent },
     { path: '', component: HomeComponent }
 

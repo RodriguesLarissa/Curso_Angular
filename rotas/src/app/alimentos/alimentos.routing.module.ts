@@ -5,7 +5,7 @@ import { NgModule } from "@angular/core";
 import { AlimentoFormComponent } from './alimento-form/alimento-form.component';
 
 const alimentosRoutes = [
-    {path: 'alimentos', component: AlimentosComponent, children: [
+    {path: '', component: AlimentosComponent, children: [
         {path: 'novo', component: AlimentoFormComponent},
         {path: ':id', component: AlimentoDetalheComponent},
         {path: ':id/editar', component: AlimentoFormComponent}, 

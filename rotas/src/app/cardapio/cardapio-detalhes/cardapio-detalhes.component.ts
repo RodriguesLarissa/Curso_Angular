@@ -29,7 +29,7 @@ export class CardapioDetalhesComponent implements OnInit {
         this.comida = this.cardapioServices.getComida(this.id);
 
         if(this.comida == null){
-          this.router.navigate(['/naoEncontrado']);
+          this.router.navigate(['cardapio/naoEncontrado']);
         }
       }
     );

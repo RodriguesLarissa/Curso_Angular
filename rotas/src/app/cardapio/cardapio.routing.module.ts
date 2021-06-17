@@ -7,8 +7,8 @@ import { CardapioDetalhesComponent } from './cardapio-detalhes/cardapio-detalhes
 
 const cardapioRoutes: Routes = [
 
-    { path: 'cardapios', component: CardapioComponent },
-    { path: 'cardapio/:id', component: CardapioDetalhesComponent },
+    { path: '', component: CardapioComponent },
+    { path: ':id', component: CardapioDetalhesComponent },
     { path: 'naoEncontrado', component: CardapioNaoEncontradoComponent },
 
 ];

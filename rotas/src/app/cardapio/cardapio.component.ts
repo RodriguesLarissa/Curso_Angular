@@ -36,7 +36,7 @@ export class CardapioComponent implements OnInit {
 
   proximaPagina(){
     //this.pagina++;
-    this.router.navigate(['/cardapios'],
+    this.router.navigate(['/cardapio'],
       {queryParams: {'pagina': ++this.pagina}});
   }
 
