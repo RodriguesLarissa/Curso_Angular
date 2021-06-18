@@ -2,13 +2,13 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
     <div class="mb-3">
         <label for="nome" class="form-label" style="font-weight: bold;">Nome</label>
-        <input type="text" name="nome" class="form-control" id="nome" placeholder="Insira seu nome" ngModel>
+        <input type="text" name="nome" class="form-control" id="nome" placeholder="Insira seu nome" [(ngModel)]="usuario.nome">
     </div>
     <br>
 
     <div class="mb-3">
         <label for="email" class="form-label" style="font-weight: bold;">E-mail</label>
-        <input type="email" name="email" class="form-control" id="email" placeholder="Insira seu e-mail (Ex: usuario@hotmail.com)" ngModel>
+        <input type="email" name="email" class="form-control" id="email" placeholder="Insira seu e-mail (Ex: usuario@hotmail.com)" [(ngModel)]="usuario.email">
     </div>
     <br>
 
