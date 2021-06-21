@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/operators';
 
 @Component({
   selector: 'app-template-form',
@@ -14,7 +13,6 @@ export class TemplateFormComponent implements OnInit {
     nome: null,
     email: null
   }
-  httpClient: any;
 
   onSubmit(form: any){
     console.log(form);
@@ -35,8 +33,7 @@ export class TemplateFormComponent implements OnInit {
       var validacep = /^[0-9]{8}$/;
 
       if(validacep.test(cep)){
-        this.httpClient.get(`https://viacep.com.br/ws/${cep}/json`)
-          .map((data: { json: () => any; }) => data.json())
+        this.http.get(`https://viacep.com.br/ws/${cep}/json`)
           .subscribe((data: any) => { console.log(data); });
       }
 
